@@ -3,7 +3,7 @@ import { BsChevronDown } from "react-icons/bs";
 import { IoIosOptions } from "react-icons/io";
 import classes from "./Navbar.module.css";
 
-const Navbar = () => {
+const Navbar = (props) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const dropdownRef = useRef(null); // Reference to the main dropdown container
@@ -31,6 +31,11 @@ const Navbar = () => {
     };
   }, []);
 
+  function handleGroupingSubmission(selected) {
+    props.setGroupBy(selected);
+    console.log(selected);
+  }
+
   return (
     <nav className={classes.navbar}>
       <div className={classes.dropdownContainer} ref={dropdownRef}>
@@ -48,16 +53,18 @@ const Navbar = () => {
             <div className={classes.subDropdown}>
               <div className={classes.label}>Grouping</div>
               <select className={classes.select}>
-                <option>Status</option>
-                <option>User</option>
-                <option>Priority</option>
+                <div onClick={handleGroupingSubmission("status")}>Status</div>
+                <option onClick={handleGroupingSubmission("user")}>User</option>
+                <option onClick={handleGroupingSubmission("priority")}>
+                  Priority
+                </option>
               </select>
             </div>
             <div className={classes.subDropdown}>
               <div className={classes.label}>Ordering</div>
               <select className={classes.select}>
-                <option>Priority</option>
-                <option>Title</option>
+                <option onClick={props.setOrderBy("priority")}>Priority</option>
+                <option onClick={props.setOrderBy("title")}>Title</option>
               </select>
             </div>
           </div>
