@@ -1,0 +1,93 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem;
+    background-color: white;
+    color: #333;
+    font-size: 1.6rem;
+}
+
+.dropdownContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.displayContainer {
+    flex: 0 0 10rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 0.7rem;
+    margin-left: 2rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 0.5rem;
+}
+
+.icon {
+    cursor: pointer;
+}
+
+
+.rotated {
+    transform: rotate(180deg);
+}
+
+.dropdownContent {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    padding: 10px;
+    margin-top: 1rem;
+    margin-left: 2rem;
+    width: 35rem;
+    top: 100%;
+    z-index: 5;
+}
+
+.subDropdown {
+    margin-bottom: 1rem;
+    padding: 0.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.label {
+    font-size: 1.5rem;
+    color: #aaa;
+}
+
+.select {
+
+    font-weight: 600;
+    font-size: 1.3rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.7rem;
+    width: 40%;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+select {
+    background-color: red;
+}
+
+
+
+.select option {
+    padding: 5px;
+}
+
+/* Hover effect */
+.select:hover {
+    background-color: #e0e0e0;
+}
